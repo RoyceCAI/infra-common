@@ -28,7 +28,13 @@ spec:
         - mountPath: /projects.json
           subPath: projects_json
           name: om-collect-secrets-volume
+        - mountPath: /general_credentials.cfg
+          subPath: credentials_cfg
+          name: global-om
       volumes:
       - name: om-collect-secrets-volume
         secret:
           secretName: om-secrets
+      - name: global-om
+        secret:
+          secretName: global-om-secrets
